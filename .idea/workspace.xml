@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e66c861f-b597-4787-8307-067e275bad3e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/qianxin/bean/UserInfoBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server2/src/main/java/com/qianxin/mapper/ConsumerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server2/src/main/resources/com.qianxin.mapper/ConsumerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/qianxin/bo/ConsumerBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/qianxin/vo/ConsumerVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/qianxin/bo/UserInfoBO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server2/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server2/src/main/java/com/qianxin/controller/ConsumerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server2/src/main/java/com/qianxin/feign/ConsumerFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/server2/src/main/java/com/qianxin/feign/ConsumerFeign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server2/src/main/java/com/qianxin/service/ConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server2/src/main/java/com/qianxin/service/ConsumerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server3/src/main/java/com/qianxin/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server3/src/main/java/com/qianxin/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server3/src/main/java/com/qianxin/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/server3/src/main/java/com/qianxin/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server3/src/main/resources/com/qianxin/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server3/src/main/resources/com/qianxin/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server2/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server2/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/server2/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,70 +19,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ConsumerMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server2/src/main/java/com/qianxin/mapper/ConsumerMapper.java">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server2/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsumerService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server2/src/main/java/com/qianxin/service/ConsumerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConsumerFeign.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server2/src/main/java/com/qianxin/feign/ConsumerFeign.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConsumerVO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/qianxin/vo/ConsumerVO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-              <folding>
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#1094#1095#0" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConsumerMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server2/src/main/resources/com.qianxin.mapper/ConsumerMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="95" selection-start-line="6" selection-start-column="95" selection-end-line="6" selection-end-column="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server3/src/main/resources/com/qianxin/mapper/UserMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-            </state>
-          </provider>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server1/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -127,8 +62,9 @@
         <option value="$PROJECT_DIR$/server3/src/main/resources/com/qianxin/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/server2/src/main/resources/com.qianxin.mapper/ConsumerMapper.xml" />
         <option value="$PROJECT_DIR$/server2/src/main/java/com/qianxin/feign/ConsumerFeign.java" />
-        <option value="$PROJECT_DIR$/server2/src/main/java/com/qianxin/service/ConsumerService.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/qianxin/vo/ConsumerVO.java" />
+        <option value="$PROJECT_DIR$/server2/src/main/java/com/qianxin/service/ConsumerService.java" />
+        <option value="$PROJECT_DIR$/server2/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -319,6 +255,32 @@
               <item name="qianxin-springcloud-kafka" type="462c0819:PsiDirectoryNode" />
               <item name="eureka-server" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qianxin-springcloud-kafka" type="462c0819:PsiDirectoryNode" />
+              <item name="server1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qianxin-springcloud-kafka" type="462c0819:PsiDirectoryNode" />
+              <item name="server1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qianxin-springcloud-kafka" type="462c0819:PsiDirectoryNode" />
+              <item name="server1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qianxin-springcloud-kafka" type="462c0819:PsiDirectoryNode" />
+              <item name="server1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="practice" type="b2602c69:ProjectViewProjectNode" />
@@ -622,12 +584,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578298451960</updated>
-      <workItem from="1578298454366" duration="2426000" />
+      <workItem from="1578298454366" duration="2747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2426000" />
+    <option name="totallyTimeSpent" value="2747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -801,8 +763,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server2/src/main/resources/com.qianxin.mapper/ConsumerMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="95" selection-start-line="6" selection-start-column="95" selection-end-line="6" selection-end-column="95" />
+        <state relative-caret-position="120">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/qianxin/vo/ConsumerVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="20" />
+          <folding>
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#1094#1095#0" expanded="true" />
+            <element signature="e#1132#1133#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -818,21 +795,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server2/src/main/java/com/qianxin/service/ConsumerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        <state relative-caret-position="456">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/qianxin/vo/ConsumerVO.java">
+    <entry file="file://$PROJECT_DIR$/server1/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server2/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding>
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="192">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
         </state>
       </provider>
     </entry>

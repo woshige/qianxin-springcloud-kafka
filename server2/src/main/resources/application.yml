@@ -1,6 +1,12 @@
 spring:
   application:
     name: server2
+  kafka:
+    bootstrap-servers: 192.168.47.101:9092
+    consumer:
+      enable-auto-commit: true
+      auto-offset-reset: latest
+      group-id: qianxin_test1
 server:
   port: 8082
 eureka:
