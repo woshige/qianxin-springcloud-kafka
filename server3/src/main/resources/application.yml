@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: server3
+  kafka:
+    consumer:
+      enable-auto-commit: true
+    bootstrap-servers: 192.168.47.101:9092
+eureka:
+      client:
+        serviceUrl.defaultZone: http://localhost:8888/eureka/
+## 数据库配置
+pgsql:
+    datasource:
+      url: jdbc:postgresql://192.168.47.101:5432/postgres
+      username: postgres
+      password: 123456
+      driver-class-name: org.postgresql.Driver
+      maxActive: 50
+      initialSize: 10
+      maxWait: 60000
+      minIdle: 6
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+server:
+  port: 9000

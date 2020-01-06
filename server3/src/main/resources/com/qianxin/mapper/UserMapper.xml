@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianxin.mapper.UserMapper">
+    <insert id="insert" parameterType="com.qianxin.bo.ConsumerBO">
+        INSERT  INTO consumer (threat_level,create_time,sip,dip,user_id,user_name,user_tel)
+        VALUES (#{threat_level},#{create_time},#{sip},#{dip},#{user_id},#{user_name},#{user_tel})
+    </insert>
+    <select id="findById" parameterType="int">
+        SELECT user_id ,user_name ,user_tel FROM consumer WHERE user_id = #{id}
+    </select>
+    <update id="updateById" parameterType="com.qianxin.bo.ConsumerBO">
+        UPDATE consumer SET
+        <if test="null != threat_level">
+            threat_level = #{threat_level}
+        </if>
+        <if test="null != create_time">
+            create_time = #{create_time}
+        </if>
+        <if test="null != sip">
+            sip = #{sip}
+        </if>
+        <if test="null != dip">
+            dip = #{dip}
+        </if>
+        <if test="null != user_name">
+            user_name = #{user_name}
+        </if>
+        <if test="null != user_tel">
+            user_tel = #{user_tel}
+        </if>
+        WHERE user_id = #{user_id}
+    </update>
+    <delete id="delete" parameterType="int">
+        DELETE FROM consumer WHERE user_id = #{id}
+    </delete>
+</mapper>

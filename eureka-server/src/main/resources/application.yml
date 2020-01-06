@@ -1,0 +1,10 @@
+server:
+  port: 8888
+security:
+  basic:
+    enabled: false
+eureka:
+  client:
+    serviceUrl.defualZone: http://localhost:${server.port}/eureka/
+    fetchRegistry: 'false'
+    registerWithEureka: 'false'
