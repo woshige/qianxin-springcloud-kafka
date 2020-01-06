@@ -1,6 +1,6 @@
 package com.qianxin.controller;
 
-import com.qianxin.bo.ConsumerBO;
+import com.qianxin.bean.UserInfoBean;
 import com.qianxin.common.Result;
 import com.qianxin.enums.ResultEnum;
 import com.qianxin.mapper.UserMapper;
@@ -22,9 +22,9 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public Result insert(ConsumerBO consumerBO) {
+    public Result insert(UserInfoBean userInfoBean) {
         try {
-            userMapper.insert(consumerBO);
+            userMapper.insert(userInfoBean);
 
         } catch (Exception e) {
             return Result.build(ResultEnum.ERROR);

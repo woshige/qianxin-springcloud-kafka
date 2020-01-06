@@ -1,8 +1,8 @@
-package com.qianxin.bo;
+package com.qianxin.bean;
 
-public class UserInfoBO {
+public class UserInfoBean {
     private Long user_id;
-    private String user_name;
+    private String userName;
     private String user_tel;
 
     public Long getUser_id() {
@@ -13,12 +13,12 @@ public class UserInfoBO {
         this.user_id = user_id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getUser_tel() {
@@ -33,7 +33,7 @@ public class UserInfoBO {
     public String toString() {
         return "UserInfoBean{" +
                 "user_id=" + user_id +
-                ", user_name='" + user_name + '\'' +
+                ", userName='" + userName + '\'' +
                 ", user_tel='" + user_tel + '\'' +
                 '}';
     }
