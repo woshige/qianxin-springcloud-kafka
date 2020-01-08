@@ -6,7 +6,7 @@
         INSERT  INTO user_info (user_id,user_name,user_tel)
         VALUES (#{user_id},#{user_name},#{user_tel})
     </insert>
-    <select id="findById" parameterType="int" resultType="com.qianxin.bean.UserInfoBean">
+    <select id="findById" parameterType="long" resultType="com.qianxin.bean.UserInfoBean">
         SELECT user_id ,user_name ,user_tel FROM user_info WHERE user_id = #{user_id}
     </select>
     <update id="updateById" parameterType="com.qianxin.bean.UserInfoBean">

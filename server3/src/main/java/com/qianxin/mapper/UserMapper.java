@@ -6,9 +6,9 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserMapper {
-    void insert(UserInfoBean userInfoBean);
+    int insert(UserInfoBean userInfoBean);
 
-    UserInfoBean findById(String userId);
+    UserInfoBean findById(Long userId);
 
     void updateById(String userId);
 

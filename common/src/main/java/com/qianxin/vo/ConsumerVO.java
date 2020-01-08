@@ -4,7 +4,6 @@ package com.qianxin.vo;
  *
  */
 public class ConsumerVO {
-    private Long id;
     private Short threat_level;
     private Long create_time;
     private String sip;
@@ -13,13 +12,6 @@ public class ConsumerVO {
     private String user_name;
     private String user_tel;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Short getThreat_level() {
         return threat_level;
@@ -79,13 +71,12 @@ public class ConsumerVO {
 
     @Override
     public String toString() {
-        return "ConsumerBean{" +
-                "id=" + id +
-                ", threat_level=" + threat_level +
+        return "ConsumerVO{" +
+                "threat_level=" + threat_level +
                 ", create_time=" + create_time +
                 ", sip='" + sip + '\'' +
                 ", dip='" + dip + '\'' +
-                ", user_id='" + user_id + '\'' +
+                ", user_id=" + user_id +
                 ", user_name='" + user_name + '\'' +
                 ", user_tel='" + user_tel + '\'' +
                 '}';

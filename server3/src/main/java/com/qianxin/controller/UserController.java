@@ -17,15 +17,15 @@ public class UserController {
     UserMapper userMapper;
 
     @RequestMapping(value = "{userId}", method = RequestMethod.GET)
-    public Result findUserInfoById(@PathVariable("userId") String userId) {
+    public Result<UserInfoBean> findUserInfoById(@PathVariable("userId") Long userId) {
         return Result.success(userMapper.findById(userId));
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     public Result insert(UserInfoBean userInfoBean) {
+        System.out.println(userInfoBean.toString());
         try {
-            userMapper.insert(userInfoBean);
-
+            int result = userMapper.insert(userInfoBean);
         } catch (Exception e) {
             return Result.build(ResultEnum.ERROR);
         }

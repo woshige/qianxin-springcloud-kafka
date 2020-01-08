@@ -7,6 +7,20 @@ spring:
       enable-auto-commit: true
       auto-offset-reset: latest
       group-id: qianxin_test1
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:postgresql://192.168.47.101:5432/postgres
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+    druid:
+      max-wait: 6000
+      min-idle: 6
+      time-between-connect-error-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 'X'
+      test-while-idle: false
+      pool-prepared-statements: true
 server:
   port: 8082
 eureka:

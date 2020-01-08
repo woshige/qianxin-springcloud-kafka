@@ -2,7 +2,7 @@ package com.qianxin.bean;
 
 public class UserInfoBean {
     private Long user_id;
-    private String userName;
+    private String user_name;
     private String user_tel;
 
     public Long getUser_id() {
@@ -13,12 +13,12 @@ public class UserInfoBean {
         this.user_id = user_id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public String getUser_tel() {
@@ -33,7 +33,7 @@ public class UserInfoBean {
     public String toString() {
         return "UserInfoBean{" +
                 "user_id=" + user_id +
-                ", userName='" + userName + '\'' +
+                ", user_name='" + user_name + '\'' +
                 ", user_tel='" + user_tel + '\'' +
                 '}';
     }

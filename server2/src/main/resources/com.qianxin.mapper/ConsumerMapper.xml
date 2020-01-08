@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qianxin.mapper.ConsumerMapper">
-    <insert id="insert" parameterType="com.qianxin.vo.ConsumerVO">
-        INSERT INTO consumer (id,threat_level,create_time,sip,dip,user_id,user_name,user_tel) VALUES (
-        #{id},#{threat_level},#{create_time},#{sip},#{dip},#{user_id},#{user_name},#{user_tel})
-    </insert>
-</mapper>
