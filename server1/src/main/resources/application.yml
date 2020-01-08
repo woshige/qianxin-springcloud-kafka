@@ -5,8 +5,8 @@ spring:
     bootstrap-servers: 192.168.47.101:9092
     producer:
       acks: 1
-      buffer-memory: 4000
-      batch-size: 2000
+      buffer-memory: 33554432
+      batch-size: 16384
       retries: 0
 eureka:
   client:

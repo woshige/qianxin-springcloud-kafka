@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/server1/server1")
+@RequestMapping("/server1")
 public class ProduceController {
     @Autowired
     private SendService service;
@@ -19,5 +19,15 @@ public class ProduceController {
     @RequestMapping(method = RequestMethod.PUT)
     public Result send(@RequestBody ProducerBO entity) {
         return Result.build(service.send(JsonUtils.objectToJson(entity)));
+    }
+
+    @RequestMapping(value = "/testForProducer", method = RequestMethod.PUT)
+    public String testForProducer(@RequestBody final ProducerBO entity) {
+        Long start = System.currentTimeMillis();
+        for (int i = 0; i < 80000; i++) {
+            service.send(JsonUtils.objectToJson(entity));
+        }
+        Long end = System.currentTimeMillis();
+        return "80000条数据总共耗费了" + (end - start) + "ms";
     }
 }
