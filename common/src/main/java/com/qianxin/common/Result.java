@@ -7,6 +7,9 @@ public class Result<T> {
     private String message;
     private T data;
 
+    public Result() {
+    }
+
     public static <T> Result<T> success(T data) {
         return new Result<T>(data);
     }

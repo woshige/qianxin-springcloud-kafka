@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient("server3")
 public interface ConsumerFeign {
     @RequestMapping(value = "/server3/{userId}", method = RequestMethod.GET)
-    UserInfoBean findUserInfoById(@PathVariable("userId") Long userId);
+    Result<UserInfoBean> findUserInfoById(@PathVariable("userId") Long userId);
 
     @RequestMapping(value = "/server3", method = RequestMethod.PUT)
     Result insert(UserInfoBean consumerBO);

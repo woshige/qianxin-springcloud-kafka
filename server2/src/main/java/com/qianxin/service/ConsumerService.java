@@ -21,15 +21,20 @@ public class ConsumerService {
     @KafkaListener(topics = {"QI_AN_XIN_PRACTICE"})
     public void consumerMessage(String message) {
         ProducerBO producerBO = JsonUtils.jsonToObject(message, ProducerBO.class);
-        UserInfoBean userInfoBean = feign.findUserInfoById(producerBO.getUser_id());
+        if(producerBO == null){
+            throw  new RuntimeException(producerBO.getClass().getName() + "is null");
+        }
+        Result<UserInfoBean> userInfoBean = feign.findUserInfoById(producerBO.getUser_id());
+        System.out.println(producerBO.getUser_id());
         ConsumerVO vo = new ConsumerVO();
         vo.setCreate_time(producerBO.getCreate_time());
         vo.setDip(producerBO.getDip());
         vo.setUser_id(producerBO.getUser_id());
         vo.setSip(producerBO.getSip());
         vo.setThreat_level(producerBO.getThreat_level());
-        vo.setUser_name(userInfoBean.getUser_name());
-        vo.setUser_tel(userInfoBean.getUser_tel());
+        UserInfoBean userInfoBeanData = userInfoBean.getData();
+        vo.setUser_name(userInfoBeanData.getUser_name());
+        vo.setUser_tel(userInfoBeanData.getUser_tel());
         mapper.insert(vo);
     }
 }

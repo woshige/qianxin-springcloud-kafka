@@ -20,6 +20,10 @@ public class ProduceController {
     public Result send(@RequestBody ProducerBO entity) {
         return Result.build(service.send(JsonUtils.objectToJson(entity)));
     }
+    @RequestMapping(value = "/test",method = RequestMethod.PUT)
+    public Result send() {
+        return Result.build(service.send("woshislc"));
+    }
 
     @RequestMapping(value = "/testForProducer", method = RequestMethod.PUT)
     public String testForProducer(@RequestBody final ProducerBO entity) {

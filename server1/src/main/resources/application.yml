@@ -2,7 +2,7 @@ spring:
   application:
     name: server1
   kafka:
-    bootstrap-servers: 192.168.47.101:9092
+    bootstrap-servers: 192.168.182.100:9092
     producer:
       acks: 1
       buffer-memory: 33554432
@@ -10,6 +10,6 @@ spring:
       retries: 0
 eureka:
   client:
-    serviceUrl.defaultZone: http://localhost:8080/eureka/
+    serviceUrl.defaultZone: http://localhost:8888/eureka/
 server:
   port: 8081

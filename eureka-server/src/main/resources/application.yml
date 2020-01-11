@@ -1,10 +1,7 @@
 server:
   port: 8888
-security:
-  basic:
-    enabled: false
 eureka:
   client:
-    serviceUrl.defualZone: http://localhost:${server.port}/eureka/
-    fetchRegistry: 'false'
-    registerWithEureka: 'false'
+    fetch-registry: false
+    register-with-eureka: false
+    service-url.defaultZone: http://localhost:${server.port}/eureka/
