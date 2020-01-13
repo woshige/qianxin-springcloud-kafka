@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SendService {
-    public static String key = "QI_AN_XIN_PRACTICE";
+
     @Autowired
     private KafkaTemplate<String, Object> template;
 
-    public ResultEnum send(String entity) {
+    public ResultEnum send(String key,String entity) {
         template.send(key, String.valueOf(System.currentTimeMillis()), entity);
         return ResultEnum.SUCCESS;
     }

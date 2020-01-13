@@ -18,6 +18,21 @@ public class ConsumerService {
     @Autowired
     ConsumerFeign feign;
 
+    /**
+     * start.time, end.time, data.consumed.in.MB, MB.sec, data.consumed.in.nMsg, nMsg.sec, rebalance.time.ms, fetch.time.ms, fetch.MB.sec, fetch.nMsg.sec
+     * 2020-01-12 22:18:32:576,
+     * 2020-01-12 22:18:33:511,
+     * 97.6563,
+     * 104.4452,
+     * 100000,
+     * 106951.8717,   fetch.nMsg.sec
+     * 1578885512822,
+     * -1578885511887,
+     * -0.0000,
+     * -0.0001
+     * @param message
+     */
+
     @KafkaListener(topics = {"QI_AN_XIN_PRACTICE"})
     public void consumerMessage(String message) {
         ProducerBO producerBO = JsonUtils.jsonToObject(message, ProducerBO.class);
@@ -25,7 +40,6 @@ public class ConsumerService {
             throw  new RuntimeException(producerBO.getClass().getName() + "is null");
         }
         Result<UserInfoBean> userInfoBean = feign.findUserInfoById(producerBO.getUser_id());
-        System.out.println(producerBO.getUser_id());
         ConsumerVO vo = new ConsumerVO();
         vo.setCreate_time(producerBO.getCreate_time());
         vo.setDip(producerBO.getDip());

@@ -2,16 +2,16 @@ spring:
   application:
     name: server2
   kafka:
-    bootstrap-servers: 192.168.182.100:9092
+    bootstrap-servers: 192.168.47.101:9092
     consumer:
       enable-auto-commit: true
       auto-offset-reset: latest
       group-id: qianxin_test1
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:postgresql://192.168.182.102:5432/postgres
+    url: jdbc:postgresql://192.168.47.101:5432/postgres
     username: postgres
-    password: postgres
+    password: 123456
     driver-class-name: org.postgresql.Driver
     druid:
       max-wait: 6000

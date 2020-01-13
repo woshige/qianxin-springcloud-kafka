@@ -4,16 +4,16 @@ spring:
   kafka:
     consumer:
       enable-auto-commit: true
-    bootstrap-servers: 192.168.182.100:9092
+    bootstrap-servers: 192.168.47.101:9092
 eureka:
       client:
         serviceUrl.defaultZone: http://localhost:8888/eureka/
 ## 数据库配置
 pgsql:
     datasource:
-      url: jdbc:postgresql://192.168.182.102:5432/postgres
+      url: jdbc:postgresql://192.168.47.101:5432/postgres
       username: postgres
-      password: postgres
+      password: 123456
       driver-class-name: org.postgresql.Driver
       maxActive: 50
       initialSize: 10
