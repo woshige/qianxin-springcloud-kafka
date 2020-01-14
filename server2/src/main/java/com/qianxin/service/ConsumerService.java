@@ -33,8 +33,9 @@ public class ConsumerService {
      * @param message
      */
 
-    @KafkaListener(topics = {"QI_AN_XIN_PRACTICE"})
+    @KafkaListener(topics = {"QI_AN_XIN_TEST"})
     public void consumerMessage(String message) {
+        System.out.println("---------listen------------");
         ProducerBO producerBO = JsonUtils.jsonToObject(message, ProducerBO.class);
         if(producerBO == null){
             throw  new RuntimeException(producerBO.getClass().getName() + "is null");

@@ -5,8 +5,10 @@ spring:
     bootstrap-servers: 192.168.47.101:9092
     consumer:
       enable-auto-commit: true
+      group-id: qianxin_test3
       auto-offset-reset: latest
-      group-id: qianxin_test1
+    producer:
+      acks: 1
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:postgresql://192.168.47.101:5432/postgres
