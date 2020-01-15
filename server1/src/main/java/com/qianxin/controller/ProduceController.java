@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/server1")
 public class ProduceController {
     public static String key = "QI_AN_XIN_PRACTICE";
-    public static String TEST_KEY = "QI_AN_XIN_TEST";
+    public static String TEST_KEY = "QI_AN_XIN_TEST_1";
     @Autowired
     private SendService service;
 

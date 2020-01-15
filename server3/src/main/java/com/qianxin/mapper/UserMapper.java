@@ -4,6 +4,8 @@ package com.qianxin.mapper;
 import com.qianxin.bean.UserInfoBean;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface UserMapper {
     int insert(UserInfoBean userInfoBean);
@@ -13,4 +15,6 @@ public interface UserMapper {
     void updateById(String userId);
 
     void delete(String userId);
+
+    List<UserInfoBean> findUserByList(List<String> list);
 }

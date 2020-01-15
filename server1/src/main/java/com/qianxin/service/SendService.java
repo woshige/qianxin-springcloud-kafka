@@ -3,6 +3,7 @@ package com.qianxin.service;
 
 import com.qianxin.call.KafKaCallback;
 import com.qianxin.enums.ResultEnum;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
@@ -18,7 +19,7 @@ public class SendService {
     private KafkaTemplate<String, String> template;
 
     public ResultEnum send(String key,String entity) {
-        ListenableFuture<SendResult<String, String>> future = template.send(key, String.valueOf(System.currentTimeMillis()), entity);
+        ListenableFuture<SendResult<String, String>> future = template.send(new ProducerRecord<String, String>(key,entity));
         future.addCallback(callback);
         return ResultEnum.SUCCESS;
     }

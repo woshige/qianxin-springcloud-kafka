@@ -5,10 +5,9 @@ import com.qianxin.common.Result;
 import com.qianxin.enums.ResultEnum;
 import com.qianxin.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/server3")
@@ -46,5 +45,10 @@ public class UserController {
             return Result.build(ResultEnum.ERROR);
         }
         return Result.build(ResultEnum.SUCCESS);
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public Result<List<UserInfoBean>> findByUserIds(@RequestParam("list") List<String> list) {
+        return Result.success(userMapper.findUserByList(list));
     }
 }
