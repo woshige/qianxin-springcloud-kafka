@@ -44,10 +44,10 @@ public class ConsumerService {
      * @param list
      */
 
-    @KafkaListener(topics = {"QI_AN_XIN_TEST_1"})
+    @KafkaListener(topics = {"QI_AN_XIN_TEST_04"},containerFactory = "batchFactory",id = "qianxin_consumer_01")
     public void consumerMessage(List<ConsumerRecord<String, String>> list) {
         System.out.println("-----------------the list size: " + list.size() + "--------------------");
-        List<ConsumerVO> consumerVOS = new LinkedList<ConsumerVO>();
+        List<ConsumerVO> consumerVOS = new LinkedList<>();
         List<Long> query = new LinkedList<>();
         Result<List<UserInfoBean>> userInfoBeans = null;
         Integer count = 0;

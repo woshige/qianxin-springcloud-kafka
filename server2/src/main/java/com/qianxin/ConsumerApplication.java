@@ -11,7 +11,6 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableDiscoveryClient
 @EnableFeignClients
 @MapperScan("com.qianxin.mapper")
-@ComponentScan("com.qianxin.config")
 public class ConsumerApplication {
     public static void main(String[] args) {
         SpringApplication.run(ConsumerApplication.class,args);
