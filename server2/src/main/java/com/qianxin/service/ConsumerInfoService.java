@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class ConsumerInfoService {
     private final Integer INSERT_BATCH = 2000;
-    private String INSERT_SQL = "INSERT INTO CONSUMER(threat_level,dip,user_name,user_id,sip,user_tel,create_time) VALUES (nextval('consumer_sequence'),?,?,?,?,?,?)";
+    private String INSERT_SQL = "INSERT INTO CONSUMER(threat_level,dip,user_name,user_id,sip,user_tel,create_time) VALUES (?,?,?,nextval('consumer_sequence'),?,?,?)";
     @Autowired
     JdbcTemplate jdbcTemplate;
 
@@ -26,10 +26,9 @@ public class ConsumerInfoService {
                     preparedStatement.setInt(1,consumerVO.getProducerBO().getThreat_level());
                     preparedStatement.setString(2,consumerVO.getProducerBO().getDip());
                     preparedStatement.setString(3,consumerVO.getUser_name());
-                    preparedStatement.setLong(4,consumerVO.getUser_id());
-                    preparedStatement.setString(5,consumerVO.getProducerBO().getSip());
-                    preparedStatement.setString(6,consumerVO.getUser_tel());
-                    preparedStatement.setLong(7,consumerVO.getProducerBO().getCreate_time());
+                    preparedStatement.setString(4,consumerVO.getProducerBO().getSip());
+                    preparedStatement.setString(5,consumerVO.getUser_tel());
+                    preparedStatement.setLong(6,consumerVO.getProducerBO().getCreate_time());
                 }
 
                 @Override

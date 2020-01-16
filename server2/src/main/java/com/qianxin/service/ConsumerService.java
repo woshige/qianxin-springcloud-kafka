@@ -54,6 +54,7 @@ public class ConsumerService {
             if (producerBO == null) {
                 logger.error("将kafka消息转换为的实体类为空");
             } else {
+                producerBOS.add(producerBO);
                 query.add(producerBO.getUser_id());
             }
         }
@@ -66,6 +67,7 @@ public class ConsumerService {
             vo.setUser_tel(data.get(producerBO.getUser_id()).getUser_tel());
             consumerVOS.add(vo);
         }
+        logger.info("要入库的consumerVOS的数目为：{}" + consumerVOS.size());
         consumerInfoService.insert(consumerVOS);
     }
 }
