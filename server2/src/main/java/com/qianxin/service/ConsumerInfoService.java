@@ -9,9 +9,8 @@ import org.springframework.stereotype.Service;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
-
 @Service
-public class UserService {
+public class ConsumerInfoService {
     private final Integer INSERT_BATCH = 2000;
     private String INSERT_SQL = "INSERT INTO CONSUMER(threat_level,dip,user_name,user_id,sip,user_tel,create_time) VALUES (nextval('consumer_sequence'),?,?,?,?,?,?)";
     @Autowired
