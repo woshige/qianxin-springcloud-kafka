@@ -7,8 +7,8 @@ spring:
       enable-auto-commit: true
       group-id: qianxin_test3
       auto-offset-reset: latest
-      max-poll-records: 3100
-      auto-commit-interval: 1000
+      max-poll-records: 1000
+      auto-commit-interval: 5000
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:postgresql://192.168.47.101:5432/postgres

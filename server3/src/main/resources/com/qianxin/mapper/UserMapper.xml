@@ -24,7 +24,7 @@
     </delete>
     <select id="findUserByList" parameterType="java.util.List" resultType="com.qianxin.bean.UserInfoBean">
         SELECT user_id ,user_name ,user_tel FROM user_info WHERE user_id IN 
-        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+        <foreach collection="set" index="index" item="item" open="(" separator="," close=")">
             #{item}
         </foreach>
     </select>

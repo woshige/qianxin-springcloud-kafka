@@ -43,7 +43,7 @@ public class KafKaConsumerConfig {
         map.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, autoOffsetReset);
         map.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
         map.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 6000);
-        map.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 12000);
+        map.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 8000);
         map.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         map.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         return map;

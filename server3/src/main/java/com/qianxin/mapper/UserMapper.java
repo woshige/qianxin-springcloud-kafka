@@ -5,6 +5,7 @@ import com.qianxin.bean.UserInfoBean;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Set;
 
 @Mapper
 public interface UserMapper {
@@ -16,5 +17,5 @@ public interface UserMapper {
 
     void delete(String userId);
 
-    List<UserInfoBean> findUserByList(List<String> list);
+    List<UserInfoBean> findUserByList(Set<Long> set);
 }

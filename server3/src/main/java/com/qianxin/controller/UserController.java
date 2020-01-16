@@ -7,7 +7,10 @@ import com.qianxin.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/server3")
@@ -47,8 +50,16 @@ public class UserController {
         return Result.build(ResultEnum.SUCCESS);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public Result<List<UserInfoBean>> findByUserIds(@RequestParam("list") List<String> list) {
-        return Result.success(userMapper.findUserByList(list));
+    @RequestMapping(value = "/findByUserList", method = RequestMethod.PUT)
+    public Result<Map<Long, UserInfoBean>> findByUserIds(@RequestParam("list") Set<Long> set) {
+        for (Long s : set) {
+            System.out.println("收到的list为" + s);
+        }
+        List<UserInfoBean> userByList = userMapper.findUserByList(set);
+        Map<Long, UserInfoBean> map = new HashMap<Long, UserInfoBean>();
+        for (UserInfoBean userInfoBean : userByList) {
+            map.put(userInfoBean.getUser_id(), userInfoBean);
+        }
+        return Result.success(map);
     }
 }

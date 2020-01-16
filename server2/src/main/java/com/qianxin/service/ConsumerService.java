@@ -14,9 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class ConsumerService {
@@ -43,46 +41,31 @@ public class ConsumerService {
      *
      * @param list
      */
-
-    @KafkaListener(topics = {"QI_AN_XIN_TEST_04"},containerFactory = "batchFactory",id = "qianxin_consumer_01")
-    public void consumerMessage(List<ConsumerRecord<String, String>> list) {
-        System.out.println("-----------------the list size: " + list.size() + "--------------------");
+    @KafkaListener(topics = "QI_AN_XIN_TEST", containerFactory = "batchFactory", id = "qianxin_consumer_02")
+    public void consumerMessages(List<ConsumerRecord<String, String>> list) {
+        logger.info("接收到的消息的数量为：{}", list.size());
+        HashMap<Long, ProducerBO> map = new HashMap<>();
+        Set<Long> query = new HashSet<>();
         List<ConsumerVO> consumerVOS = new LinkedList<>();
-        List<Long> query = new LinkedList<>();
-        Result<List<UserInfoBean>> userInfoBeans = null;
-        Integer count = 0;
-        ArrayList<ProducerBO> temp = new ArrayList<>(list.size());
-        for (ConsumerRecord<String, String> record : list) {
-            String value = record.value();
+        List<ProducerBO> producerBOS = new LinkedList<>();
+        for (ConsumerRecord<String, String> consumerRecord : list) {
+            String value = consumerRecord.value();
             ProducerBO producerBO = JsonUtils.jsonToObject(value, ProducerBO.class);
-            if (producerBO != null) {
+            if (producerBO == null) {
+                logger.error("将kafka消息转换为的实体类为空");
+            } else {
                 query.add(producerBO.getUser_id());
-                temp.add(producerBO);
-                count++;
             }
-            if (count.equals(list.size())) {
-                userInfoBeans = feign.findByUserIds(query);
-                break;
-            }
-            producerBO = null;
         }
-        if (userInfoBeans == null) {
-            logger.info("查询到的userInfoBeans为空");
-        }else{
-            int size = temp.size();
-            List<UserInfoBean> infoBeans = userInfoBeans.getData();
-            for (int i = 0; i < size; i++){
-                ProducerBO producerBO = temp.get(i);
-                UserInfoBean userInfoBean = infoBeans.get(i);
-                ConsumerVO consumerVO = new ConsumerVO();
-                consumerVO.setProducerBO(producerBO);
-                consumerVO.setUser_tel(userInfoBean.getUser_tel());
-                consumerVO.setUser_name(userInfoBean.getUser_name());
-                consumerVO.setUser_id(userInfoBean.getUser_id());
-                consumerVOS.add(consumerVO);
-                consumerInfoService.insert(consumerVOS);
-            }
-
+        Result<Map<Long, UserInfoBean>> result = feign.findByUserIds(query);
+        Map<Long, UserInfoBean> data = result.getData();
+        for (ProducerBO producerBO : producerBOS) {
+            ConsumerVO vo = new ConsumerVO();
+            vo.setProducerBO(producerBO);
+            vo.setUser_name(data.get(producerBO.getUser_id()).getUser_name());
+            vo.setUser_tel(data.get(producerBO.getUser_id()).getUser_tel());
+            consumerVOS.add(vo);
         }
+        consumerInfoService.insert(consumerVOS);
     }
 }
