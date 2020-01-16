@@ -2,7 +2,6 @@
 *.class
 target/
 out/
-test/
 *.iml
 # Log file
 *.log
